@@ -1,0 +1,947 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CR.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#include ""l.chs\\afxolecl.rc""        // OLE container resources\r\n"
+    "#include ""l.chs\\afxolesv.rc""        // OLE server resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CR.ico"
+IDR_CRTYPE              ICON    DISCARDABLE     "res\\CRDoc.ico"
+IDI_ICON_OUTPUT         ICON    DISCARDABLE     "res\\output.ico"
+IDI_ICON_BPNET          ICON    DISCARDABLE     "res\\bpnet.ico"
+IDI_ICON_INPUT          ICON    DISCARDABLE     "res\\input.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_SRVR_INPLACE        BITMAP  MOVEABLE PURE   "res\\IToolbar.bmp"
+IDB_BITMAP1             BITMAP  MOVEABLE PURE   "res\\coldtool.bmp"
+IDB_BITMAP2             BITMAP  MOVEABLE PURE   "res\\hottool.bmp"
+IDB_BITMAP_BACK         BITMAP  MOVEABLE PURE   "res\\bitmap3.bmp"
+IDB_BITMAP_MASK         BITMAP  MOVEABLE PURE   "res\\bitmap4.bmp"
+IDB_BITMAP_COLOR        BITMAP  DISCARDABLE     "res\\color.bmp"
+IDB_BITMAP_TOOLBAR      BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_BITMAP_TOOLBAR_COLD BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_SRVR_INPLACE TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "选择输入类型"
+    BEGIN
+        MENUITEM "点阵",                        ID_INPUT_MATRIX
+        MENUITEM "手写板",                      ID_INPUT_HANDPAT
+        MENUITEM "图片",                        ID_INPUT_PICTURE
+    END
+    POPUP "预处理算法"
+    BEGIN
+        MENUITEM "一次性预处理",                ID_PREPRO_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "256色到灰度",                 ID_256ToGray
+        MENUITEM "二值化",                      ID_GrayToWhiteBlack
+        MENUITEM "梯度锐化",                    ID_prcSharp
+        MENUITEM "去离散噪声",                  ID_RemoveNoise
+        MENUITEM "倾斜度调整",                  ID_AdjustSlope
+        MENUITEM "字符分割",                    ID_prcDivide
+        MENUITEM "大小归一化",                  ID_Standarize
+        MENUITEM "紧缩重排",                    ID_ShrinkAlign
+    END
+    POPUP "神经网络算法"
+    BEGIN
+        MENUITEM "添加样本",                    ID_ADD_SAMPLE
+        POPUP "查看样本"
+        BEGIN
+            POPUP "点阵"
+            BEGIN
+                MENUITEM "8 * 8",                       ID_MATRIX_88
+                MENUITEM "8 * 16",                      ID_MATRIX_816
+                MENUITEM "16 * 8",                      ID_MATRIX_168
+                MENUITEM "16 * 16",                     ID_MATRIX_1616
+            END
+            POPUP "手写板"
+            BEGIN
+                MENUITEM "8 * 8",                       ID_HANDPAT_88
+                MENUITEM "8 * 16",                      ID_HANDPAT_816
+                MENUITEM "16 * 8",                      ID_HANDPAT_168
+                MENUITEM "16 * 16",                     ID_HANDPAT_1616
+            END
+            POPUP "图片"
+            BEGIN
+                MENUITEM "选择图片",                    ID_PICTURE_OPEN
+            END
+        END
+        MENUITEM "保存样本",                    ID_SAMPLE_SAVE
+        MENUITEM "训练",                        ID_TRAIN
+        MENUITEM "识别",                        ID_RECGNIZE
+    END
+    POPUP "窗口"
+    BEGIN
+        MENUITEM "控制板",                      ID_INPUT_CTRLPAT
+        MENUITEM "输入",                        ID_CTRL_INPUT
+        MENUITEM "算法",                        ID_CTRL_BPNET
+        MENUITEM "输出",                        ID_CTRL_OUTPUT
+        MENUITEM "显示板",                      ID_SHOWRESULT
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "程序使用说明(&A)...",         ID_APP_ABOUT
+    END
+END
+
+IDR_CNTR_INPLACE MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "另存为(&A)...",               ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+END
+
+IDR_SRVR_INPLACE MENU DISCARDABLE 
+BEGIN
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "选择性粘贴(&S)...",           ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "插入新对象(&N)...",           ID_OLE_INSERT_NEW
+        MENUITEM "链接(&K)...",                 ID_OLE_EDIT_LINKS
+        MENUITEM "<<用 OLE 谓词替换此处>>",     ID_OLE_VERB_FIRST
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 CR(&A)...",              ID_APP_ABOUT
+    END
+END
+
+IDR_SRVR_EMBEDDED MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "更新(&U)\tCtrl+S",            ID_FILE_UPDATE
+        MENUITEM "保存复本为(&A)...",           ID_FILE_SAVE_COPY_AS
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "选择性粘贴(&S)...",           ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "插入新对象(&N)...",           ID_OLE_INSERT_NEW
+        MENUITEM "链接(&K)...",                 ID_OLE_EDIT_LINKS
+        MENUITEM "<<用 OLE 谓词替换此处>>",     ID_OLE_VERB_FIRST
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 CR(&A)...",              ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+IDR_CNTR_INPLACE ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+IDR_SRVR_INPLACE ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_SRVR,    VIRTKEY, NOINVERT
+END
+
+IDR_SRVR_EMBEDDED ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "S",            ID_FILE_UPDATE,         VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 283, 401
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 CR"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,4,21,21
+    LTEXT           "CR 1.0 版        字符自动识别",IDC_STATIC,40,10,193,8,
+                    SS_NOPREFIX
+    DEFPUSHBUTTON   "确定",IDOK,211,7,50,14,WS_GROUP
+    LTEXT           "全国计算机仿真大奖赛",IDC_STATIC,94,39,82,10
+    LTEXT           "参赛人员：张乐 林龙涛 陈胜涛",IDC_STATIC,30,57,113,10
+    LTEXT           "辅导老师：杨厚俊",IDC_STATIC,30,69,113,10
+    LTEXT           "参赛单位：青岛大学",IDC_STATIC,30,81,113,10
+    LTEXT           "参赛证号：060227",IDC_STATIC,166,57,69,10
+    GROUPBOX        "",IDC_STATIC,15,28,246,72
+    GROUPBOX        "操作说明",IDC_STATIC,15,108,246,282
+    LTEXT           "2、最精简的操作步骤是：在程序起始页面显示的点阵中直接输入要识别的字符，然后点工具栏上的“识别”按钮即可。因为程序中已经默认将点阵规约为8*8，并且已经自动完成训练。",
+                    IDC_STATIC,25,146,225,27
+    LTEXT           "3、完整的操作步骤是：首先打开菜单上的（“神经网络算法”-〉“查看样本”），然后选择需要识别的字符的输入类型和大小，打开样本后点击“训练”按钮进行训练，训练完成后点击本类型对应的“点阵”或“手写板”或“图片”按钮进行输入。紧接着可以点击“识别”按钮进行识别。",
+                    IDC_STATIC,25,180,225,42
+    LTEXT           "4、训练或识别完成后，底部控制面板会自动跳到输出控制页面，用户可以在此查看输出结果和训练误差以及识别正确率等信息。用户可以在“输出控制”的“结果分析与样本管理”栏中选择当前识别结果是否正确，选择的结果将作为程序的识别率的计算标准。",
+                    IDC_STATIC,25,229,225,42
+    LTEXT           "5、关于样本管理：我们已经提供了点阵和手写板的若干样本。用户可以自由添加或删除样本。添加的步骤是：首先在输入框（点阵或手写板）中输入要添加的样本，然后在底部控制板的输入控制页面上点击“预处理”按钮，然后可以到底部控制面板的输出控制页面上，选择“加入样本库”复选框，然后在“请输入样本值”编辑框中写入样本，最后单击“加入样本”按钮即可。删除的步骤是：选中列表框中的一个或多个样本，然后点击“删除样本”按钮即可删除。注意样本更新后如果想识别，必须重新训练。",
+                    IDC_STATIC,26,278,226,73
+    LTEXT           "6、关于其它功能：程序中为了用户友好性提供了多种输入类型及控制方式，分别在菜单，工具栏和底部控制面板中有所体现。在此不再赘述，欢迎您试用：）",
+                    IDC_STATIC,25,358,226,26
+    LTEXT           "1、系统可以识别的字符集为：“ABCZUNIX”，如果无法识别，系统会显示“？”。",
+                    IDC_STATIC,27,120,221,19
+END
+
+IDD_CR_FORM DIALOG DISCARDABLE  0, 0, 380, 291
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+END
+
+IDD_DIALOG_POINTMATRIX DIALOG DISCARDABLE  0, 0, 200, 252
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+END
+
+IDD_DIALOG_CTRL_INPUT DIALOGEX 0, 0, 565, 116
+STYLE WS_CHILD
+EXSTYLE WS_EX_STATICEDGE
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "点阵输入控制",IDC_STATIC,15,0,166,89
+    GROUPBOX        "手写板输入控制",IDC_STATIC,200,0,166,89
+    GROUPBOX        "预处理控制",IDC_STATIC,385,0,166,89
+    LTEXT           "点阵颜色",IDC_STATIC,31,15,30,9
+    PUSHBUTTON      "",IDC_BUTTON_COLOR,64,15,24,10,BS_BITMAP | BS_FLAT
+    LTEXT           "背景颜色",IDC_STATIC,102,15,30,9
+    PUSHBUTTON      "",IDC_BUTTON_BAKCOLOR,135,15,24,10,BS_BITMAP | BS_FLAT
+    LTEXT           "点的大小",IDC_STATIC,32,72,30,9
+    COMBOBOX        IDC_COMBO_POINTSIZE,65,70,26,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,28,7,141,22
+    GROUPBOX        "",IDC_STATIC,28,64,141,22
+    CONTROL         "Slider1",IDC_SLIDER_WIDTH,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,62,32,34,13
+    LTEXT           "点阵宽度",IDC_STATIC,31,34,30,9
+    GROUPBOX        "",IDC_STATIC,28,26,141,22
+    GROUPBOX        "",IDC_STATIC,28,45,141,22
+    CONTROL         "Slider1",IDC_SLIDER_HEIGHT,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,132,32,34,13
+    LTEXT           "点阵高度",IDC_STATIC,102,33,30,9
+    LTEXT           "点阵行数",IDC_STATIC,31,53,30,9
+    COMBOBOX        IDC_COMBO_ROWS,65,50,26,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_COLS,135,50,26,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "点阵列数",IDC_STATIC,102,53,30,9
+    PUSHBUTTON      "重绘",IDC_BUTTON_RESET,104,71,52,11
+    LTEXT           "画笔颜色",IDC_STATIC,210,16,30,9
+    PUSHBUTTON      "",IDC_BUTTON_COLOR_PAT,246,16,24,10,BS_BITMAP | BS_FLAT
+    LTEXT           "背景颜色",IDC_STATIC,289,16,30,9
+    PUSHBUTTON      "",IDC_BUTTON_BAKCOLOR_PAT,324,16,24,10,BS_BITMAP | 
+                    BS_FLAT
+    LTEXT           "笔宽",IDC_STATIC,209,63,16,8
+    GROUPBOX        "",IDC_STATIC,204,8,158,22
+    GROUPBOX        "",IDC_STATIC,204,46,159,40
+    CONTROL         "Slider1",IDC_SLIDER_WIDTH_PAT,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,246,33,33,13
+    LTEXT           "手写板宽度",IDC_STATIC,208,34,37,9
+    GROUPBOX        "",IDC_STATIC,204,27,158,22
+    CONTROL         "Slider1",IDC_SLIDER_HEIGHT_PAT,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,327,34,34,13
+    LTEXT           "手写板高度",IDC_STATIC,286,35,38,9
+    PUSHBUTTON      "重绘",IDC_BUTTON_RESET_PAT,302,63,52,11
+    GROUPBOX        "",IDC_STATIC_RADIOGROUP,226,48,66,37,WS_GROUP
+    CONTROL         "3",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    231,54,20,10
+    CONTROL         "6",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,260,54,20,10
+    CONTROL         "9",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,231,72,20,10
+    CONTROL         "橡皮",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,260,72,26,
+                    10
+    PUSHBUTTON      "预处理",IDC_BUTTON_PREPRO,482,24,52,11
+    LTEXT           "输出宽度",IDC_STATIC,407,18,31,8
+    LTEXT           "输出高度",IDC_STATIC,407,33,31,8
+    COMBOBOX        IDC_COMBO_HEIGHT,446,31,26,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_WIDTH,446,15,26,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,393,8,150,76
+    LTEXT           "请注意：菜单上的预处理各步骤仅供演示，必须顺序执行，详情请看文档。实际运行程序时只需一次性执行预处理。",
+                    IDC_STATIC,407,52,131,28
+END
+
+IDD_DIALOG_CTRL_BPNET DIALOG DISCARDABLE  0, 0, 565, 116
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "算法参数控制",IDC_STATIC,234,0,317,89
+    GROUPBOX        "关键算法选择",IDC_STATIC,12,0,204,89
+    LTEXT           "隐层结点个数",IDC_STATIC,250,28,45,12
+    COMBOBOX        IDC_COMBO_HIDE,302,26,34,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "最小均方误差",IDC_STATIC,250,49,45,12
+    EDITTEXT        IDC_EDIT_ERROR,302,47,34,12,ES_AUTOHSCROLL
+    LTEXT           "动量因子",IDC_STATIC,358,45,32,10
+    EDITTEXT        IDC_EDIT_RELATIVE,397,42,34,12,ES_AUTOHSCROLL
+    LTEXT           "训练步长",IDC_STATIC,250,68,32,8
+    EDITTEXT        IDC_EDIT_STEP,302,66,34,12,ES_AUTOHSCROLL
+    LTEXT           "增加率",IDC_STATIC,455,30,23,10
+    LTEXT           "减少率",IDC_STATIC,455,49,23,10
+    GROUPBOX        "可变学习率BP网络算法",IDC_STATIC,448,14,93,69
+    COMBOBOX        IDC_COMBO_SUBSRATE,503,46,34,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_PLUSRATE,503,27,34,139,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "调整最大误差",IDC_STATIC,455,68,46,10
+    EDITTEXT        IDC_EDIT_MAXERROR,503,66,34,12,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STATIC_TEXT,112,20,98,43
+    GROUPBOX        "",IDC_STATIC,15,14,94,69
+    CONTROL         "反向传播算法",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,20,25,65,13
+    CONTROL         "动量因子调整算法",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,20,46,74,13
+    CONTROL         "可变学习率BP网络算法",IDC_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,20,65,86,13
+    GROUPBOX        "反向传播算法",IDC_STATIC,240,14,103,69
+    GROUPBOX        "动量因子调整算法",IDC_STATIC,350,14,90,69
+    PUSHBUTTON      "训练 ",IDC_BUTTON_TRAIN,132,70,61,12
+END
+
+IDD_DIALOG_CTRL_OUTPUT DIALOGEX 0, 0, 565, 116
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "结果输出",IDC_STATIC_MATRIX,9,0,92,89
+    GROUPBOX        "训练过程误差分析",IDC_STATIC_CHART,105,0,221,89
+    GROUPBOX        "结果分析与样本管理",IDC_STATIC,330,0,228,89
+    LTEXT           "本次训练时间：",IDC_STATIC,225,22,55,9
+    LTEXT           "",IDC_STATIC_TIME,283,22,40,9,0,WS_EX_TRANSPARENT
+    CONTROL         "List1",IDC_LIST_RESULT,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,339,7,117,68,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "识别正确率：",IDC_STATIC,343,79,46,9
+    LTEXT           "",IDC_STATIC_RESULT,392,79,51,9,0,WS_EX_TRANSPARENT
+    LTEXT           "各种样本总容量:",IDC_STATIC,462,79,58,9
+    LTEXT           "",IDC_STATIC_AVERTIME,523,79,29,9,0,WS_EX_TRANSPARENT
+    GROUPBOX        "结果判断",IDC_STATIC,462,4,87,24
+    CONTROL         "正确",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    473,14,27,11
+    CONTROL         "错误",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,513,14,26,
+                    11
+    CONTROL         "加入样本库",IDC_CHECK_SAMPLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,470,31,49,12
+    EDITTEXT        IDC_EDIT_SAMPLE,515,44,28,12,ES_AUTOHSCROLL
+    LTEXT           "请输入样本值",IDC_STATIC,463,46,45,9
+    PUSHBUTTON      "加入样本",IDC_BUTTON_SAMPLE,463,62,40,11
+    LTEXT           "本次最大误差：",IDC_STATIC,225,34,55,9
+    LTEXT           "本次最小误差：",IDC_STATIC,225,46,55,9
+    LTEXT           "",IDC_STATIC_MAXERR,283,34,40,9,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC_MINERR,283,46,40,9,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "删除样本",IDC_BUTTON_SAMPLE_SUB,509,62,40,11
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "CR Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CR\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2006\0"
+            VALUE "OriginalFilename", "CR.EXE\0"
+            VALUE "ProductName", "CR 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 394
+    END
+
+    IDD_CR_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 373
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 284
+    END
+
+    IDD_DIALOG_POINTMATRIX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 245
+    END
+
+    IDD_DIALOG_CTRL_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 558
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_DIALOG_CTRL_BPNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 558
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_DIALOG_CTRL_OUTPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 558
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_ERAZOR       CURSOR  DISCARDABLE     "res\\cursorer.cur"
+IDC_CURSOR_PEN          CURSOR  DISCARDABLE     "res\\cursorpen.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_CTRL_INPUT DLGINIT
+BEGIN
+    IDC_COMBO_POINTSIZE, 0x403, 3, 0
+0x3830, "\000" 
+    IDC_COMBO_POINTSIZE, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_POINTSIZE, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_POINTSIZE, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3032, 0x0020, 
+    IDC_COMBO_POINTSIZE, 0x403, 5, 0
+0x3432, 0x2020, "\000" 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3832, 0x0020, 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3033, 0x0020, 
+    IDC_COMBO_POINTSIZE, 0x403, 3, 0
+0x3233, "\000" 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3433, 0x0020, 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3633, 0x0020, 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3833, 0x0020, 
+    IDC_COMBO_POINTSIZE, 0x403, 4, 0
+0x3034, 0x0020, 
+    IDC_COMBO_ROWS, 0x403, 3, 0
+0x3830, "\000" 
+    IDC_COMBO_ROWS, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_ROWS, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_ROWS, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_COMBO_ROWS, 0x403, 3, 0
+0x3432, "\000" 
+    IDC_COMBO_ROWS, 0x403, 3, 0
+0x3233, "\000" 
+    IDC_COMBO_COLS, 0x403, 3, 0
+0x3830, "\000" 
+    IDC_COMBO_COLS, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_COLS, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_COLS, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_COMBO_COLS, 0x403, 3, 0
+0x3432, "\000" 
+    IDC_COMBO_COLS, 0x403, 3, 0
+0x3233, "\000" 
+    IDC_COMBO_HEIGHT, 0x403, 3, 0
+0x3830, "\000" 
+    IDC_COMBO_HEIGHT, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_WIDTH, 0x403, 3, 0
+0x3830, "\000" 
+    IDC_COMBO_WIDTH, 0x403, 3, 0
+0x3631, "\000" 
+    0
+END
+
+IDD_DIALOG_CTRL_BPNET DLGINIT
+BEGIN
+    IDC_COMBO_HIDE, 0x403, 3, 0
+0x3930, "\000" 
+    IDC_COMBO_HIDE, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_HIDE, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_COMBO_SUBSRATE, 0x403, 4, 0
+0x2e30, 0x0037, 
+    IDC_COMBO_SUBSRATE, 0x403, 5, 0
+0x2e30, 0x3537, "\000" 
+    IDC_COMBO_SUBSRATE, 0x403, 4, 0
+0x2e30, 0x0038, 
+    IDC_COMBO_PLUSRATE, 0x403, 5, 0
+0x2e31, 0x3330, "\000" 
+    IDC_COMBO_PLUSRATE, 0x403, 5, 0
+0x2e31, 0x3530, "\000" 
+    IDC_COMBO_PLUSRATE, 0x403, 5, 0
+0x2e31, 0x3730, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      MOVEABLE PURE   "CR.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 程序初始化失败。请确认 OLE 库程序是正确的版本。"
+    IDP_FAILED_TO_CREATE    "建立对象失败。请确认该对象已被注册入系统。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "CR\n\nCR\nCR 文件 (*.cr)\n.cr\nCR.Document\nCR Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "CR"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+    ID_FILE_UPDATE          "更新集装程序以显示任何改变\n更新"
+    ID_FILE_SAVE_COPY_AS    "将活动文档的复本以一个新文件名保存\n保存复本"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和使用说明\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_PASTE_LINK      "插入剪贴板内容和一条通向其来源的链接\n粘贴链接"
+    ID_EDIT_PASTE_SPECIAL   "用选项插入剪贴板内容\n选择性粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OLE_INSERT_NEW       "插入新嵌入的对象\n新对象"
+    ID_OLE_EDIT_LINKS       "编辑链接对象\n编辑链接"
+    ID_OLE_EDIT_CONVERT     "将对象转换成不同的类型\n转换对象"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OLE_VERB_FIRST       "激活嵌入或链接的对象"
+    57873                   "激活嵌入或链接的对象"
+    57874                   "激活嵌入或链接的对象"
+    57875                   "激活嵌入或链接的对象"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INPUT_MATRIX         "点阵"
+    ID_INPUT_HANDPAT        "手写板"
+    ID_INPUT_PICTURE        "图片"
+    ID_INPUT_CTRLPAT        "控制板"
+    ID_TRAIN                "训练"
+    ID_RECGNIZE             "识别"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SHOWRESULT           "显示板"
+    ID_PREPRO_ALL           "一次性预处理"
+    ID_ADD_SAMPLE           "添加样本"
+    ID_MATRIX_88            "点阵中8*8的样本"
+    ID_MATRIX_816           "点阵中8*16的样本"
+    ID_MATRIX_832           "点阵中的8*32样本"
+    ID_MATRIX_1616          "点阵中的16*16样本"
+    ID_MATRIX_168           "点阵中的16*8样本"
+    ID_MATRIX_1632          "点阵中的16*32样本"
+    ID_MATRIX_328           "点阵中的32*8样本"
+    ID_MATRIX_3216          "点阵中的32*16样本"
+    ID_MATRIX_3232          "点阵中的32*32样本"
+    ID_HANDPAT_88           "手写板中的8*8样本"
+    ID_HANDPAT_816          "手写板中的8*16样本"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_HANDPAT_832          "手写板中的8*32样本"
+    ID_HANDPAT_168          "手写板中的16*8样本"
+    ID_HANDPAT_1616         "手写板中的16*16样本 "
+    ID_HANDPAT_1632         "手写板中的16*32样本"
+    ID_HANDPAT_328          "手写板中的32*8样本"
+    ID_HANDPAT_3216         "手写板中的32*16样本"
+    ID_HANDPAT_3232         "手写板中的32*32样本"
+    ID_PICTURE_OPEN         "选择图片"
+    ID_CTRL_INPUT           "输入"
+    ID_CTRL_BPNET           "算法"
+    ID_CTRL_OUTPUT          "输出"
+    ID_SAMPLE_SAVE          "保存样本"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\CR.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#include "l.chs\afxolecl.rc"        // OLE container resources
+#include "l.chs\afxolesv.rc"        // OLE server resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
